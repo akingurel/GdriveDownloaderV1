@@ -1,6 +1,6 @@
-# Google Drive Video İndirici (GUI) 🎥
+# Video İndirici (GUI) 🎥
 
-Google Drive üzerindeki "Yalnızca Görüntülenen" (View-Only / İndirme Kısıtlamalı) videoları yüksek kalitede indirmek için geliştirilmiş modern bir masaüstü uygulaması.
+"Yalnızca Görüntülenen" (View-Only / İndirme Kısıtlamalı) videoları yüksek kalitede indirmek için geliştirilmiş modern bir masaüstü uygulaması.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-green.svg)
@@ -18,7 +18,7 @@ Google Drive üzerindeki "Yalnızca Görüntülenen" (View-Only / İndirme Kıs�
 ## 🚀 Kurulum ve Kullanım
 
 ### Seçenek 1: Hazır EXE Kullanımı (Önerilen)
-`Releases` kısmından en son sürümü indirin ve `GDriveIndirici.exe` dosyasını çalıştırın. Python kurmanıza gerek yoktur.
+`Releases` kısmından en son sürümü indirin ve uygulamanın `.exe` dosyasını çalıştırın. Python kurmanıza gerek yoktur.
 
 ### Seçenek 2: Kaynak Koddan Çalıştırma
 1.  Bu depoyu klonlayın:
@@ -46,9 +46,9 @@ Bu proje MIT Lisansı altında lisanslanmıştır.
 
 ---
 
-# Google Drive Video Downloader (GUI) 🎥 [English]
+# Video Downloader (GUI) 🎥 [English]
 
-A modern desktop application developed to download "View-Only" (download restricted) videos from Google Drive in high quality.
+A modern desktop application developed to download "View-Only" (download restricted) videos from online sources in high quality.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-green.svg)
@@ -66,7 +66,7 @@ A modern desktop application developed to download "View-Only" (download restric
 ## 🚀 Installation & Usage
 
 ### Option 1: Using the EXE (Recommended)
-Download the latest release from the `Releases` section and run `GDriveIndirici.exe`. No Python required.
+Download the latest release from the `Releases` section and run the application's `.exe` file. No Python required.
 
 ### Option 2: Running from Source
 1.  Clone this repository:
