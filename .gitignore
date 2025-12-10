@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+.venv/
+env/
+
+# PyInstaller diistribution
+build/
+dist/
+*.spec
+
+# User Data
+history.json
+
+# Video Files
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.f98
+*.fba
