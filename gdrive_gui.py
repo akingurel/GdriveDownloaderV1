@@ -8,14 +8,13 @@ import json
 import sys
 from datetime import datetime
 
-# Uygulama Ayarları
 APP_NAME = "Google Drive İndirici"
 WIDTH = 700
 HEIGHT = 600
 HISTORY_FILE = "history.json"
 
-ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
-ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("blue")
 
 class GDriveDownloaderApp(ctk.CTk):
     def __init__(self):
@@ -25,9 +24,8 @@ class GDriveDownloaderApp(ctk.CTk):
         self.geometry(f"{WIDTH}x{HEIGHT}")
         self.resizable(False, False)
 
-        # Grid layout configuration
         self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(3, weight=1) # History section expandable
+        self.grid_rowconfigure(3, weight=1)
 
         self.download_folder = os.getcwd()
         self.history = self.load_history()
@@ -35,14 +33,12 @@ class GDriveDownloaderApp(ctk.CTk):
         self.create_widgets()
 
     def create_widgets(self):
-        # --- Başlık ---
         self.header_frame = ctk.CTkFrame(self, corner_radius=0)
         self.header_frame.grid(row=0, column=0, sticky="ew")
         
         self.header_label = ctk.CTkLabel(self.header_frame, text="Google Drive Video İndirici", font=ctk.CTkFont(size=20, weight="bold"))
         self.header_label.pack(pady=10)
 
-        # --- Giriş Alanı ---
         self.input_frame = ctk.CTkFrame(self)
         self.input_frame.grid(row=1, column=0, padx=20, pady=10, sticky="ew")
 
@@ -55,7 +51,6 @@ class GDriveDownloaderApp(ctk.CTk):
         self.paste_btn = ctk.CTkButton(self.input_frame, text="Yapıştır", width=80, command=self.paste_url)
         self.paste_btn.grid(row=0, column=2, padx=10, pady=10)
 
-        # --- Ayarlar ve İndirme ---
         self.action_frame = ctk.CTkFrame(self)
         self.action_frame.grid(row=2, column=0, padx=20, pady=10, sticky="ew")
 
@@ -75,7 +70,6 @@ class GDriveDownloaderApp(ctk.CTk):
         self.status_label = ctk.CTkLabel(self.action_frame, text="Hazır", text_color="gray")
         self.status_label.grid(row=3, column=0, columnspan=3, pady=(0, 10))
 
-        # --- Geçmiş ---
         self.history_frame = ctk.CTkFrame(self)
         self.history_frame.grid(row=3, column=0, padx=20, pady=10, sticky="nsew")
         self.history_frame.grid_columnconfigure(0, weight=1)
@@ -121,7 +115,6 @@ class GDriveDownloaderApp(ctk.CTk):
         thread.start()
 
     def download_video(self, url):
-        # User-Agent Spoofing
         user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         
         ydl_opts = {
@@ -129,9 +122,9 @@ class GDriveDownloaderApp(ctk.CTk):
             'outtmpl': os.path.join(self.download_folder, '%(title)s.%(ext)s'),
             'user_agent': user_agent,
             'noplaylist': True,
-            'keepvideo': False, # Explicitly ensure temp files are deleted
+            'keepvideo': False, 
             'progress_hooks': [self.my_hook],
-            'postprocessor_args': {'ffmpeg': ['-c', 'copy']}, # Speed up with copy if possible
+            'postprocessor_args': {'ffmpeg': ['-c', 'copy']},
         }
 
         try:
@@ -193,7 +186,7 @@ class GDriveDownloaderApp(ctk.CTk):
             "path": path,
             "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
-        self.history.insert(0, record) # Add to top
+        self.history.insert(0, record)
         try:
             with open(HISTORY_FILE, "w", encoding="utf-8") as f:
                 json.dump(self.history, f, ensure_ascii=False, indent=4)
