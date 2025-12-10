@@ -8,7 +8,7 @@ import json
 import sys
 from datetime import datetime
 
-APP_NAME = "Google Drive İndirici"
+APP_NAME = "Video İndirici"
 WIDTH = 700
 HEIGHT = 600
 HISTORY_FILE = "history.json"
@@ -36,7 +36,7 @@ class GDriveDownloaderApp(ctk.CTk):
         self.header_frame = ctk.CTkFrame(self, corner_radius=0)
         self.header_frame.grid(row=0, column=0, sticky="ew")
         
-        self.header_label = ctk.CTkLabel(self.header_frame, text="Google Drive Video İndirici", font=ctk.CTkFont(size=20, weight="bold"))
+        self.header_label = ctk.CTkLabel(self.header_frame, text="Video İndirici", font=ctk.CTkFont(size=20, weight="bold"))
         self.header_label.pack(pady=10)
 
         self.input_frame = ctk.CTkFrame(self)
@@ -45,7 +45,7 @@ class GDriveDownloaderApp(ctk.CTk):
         self.url_label = ctk.CTkLabel(self.input_frame, text="Video URL:")
         self.url_label.grid(row=0, column=0, padx=10, pady=10)
 
-        self.url_entry = ctk.CTkEntry(self.input_frame, placeholder_text="Google Drive bağlantısını buraya yapıştırın...", width=400)
+        self.url_entry = ctk.CTkEntry(self.input_frame, placeholder_text="Video bağlantısını buraya yapıştırın...", width=400)
         self.url_entry.grid(row=0, column=1, padx=10, pady=10)
 
         self.paste_btn = ctk.CTkButton(self.input_frame, text="Yapıştır", width=80, command=self.paste_url)

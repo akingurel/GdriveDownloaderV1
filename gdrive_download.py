@@ -24,7 +24,7 @@ def main():
     os.system('cls' if os.name == 'nt' else 'clear')
 
     print("##########################################################")
-    print("#      Google Drive Yalnızca Görüntülenen Video İndirici #")
+    print("#      Video İndirici (Korumalı İçerik)                  #")
     print("##########################################################")
     print("")
     
@@ -33,7 +33,7 @@ def main():
     print("    Eğer yoksa, en iyi tek dosya kalitesi indirilecektir.")
     print("")
 
-    url = input("Lütfen Google Drive Video Bağlantısını yapıştırın: ").strip()
+    url = input("Lütfen Video Bağlantısını yapıştırın: ").strip()
 
     if not url:
         print("Hata: Bağlantı girilmedi.")
